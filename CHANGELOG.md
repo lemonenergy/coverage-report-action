@@ -1,8 +1,6 @@
 # Changelog
 
-
 ## v0.0.1
-
 
 ### 🚀 Enhancements
 
@@ -31,4 +29,3 @@
 
 - Rafael-lua <rafael.tragueta@lemon.energy>
 - GitHub Actions ([@Github-Action-Bot](https://github.com/Github-Action-Bot))
-
