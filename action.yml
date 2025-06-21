@@ -1,0 +1,12 @@
+name: "Action Template Lemon"
+description: ""
+# outputs:
+#     value:
+#         description: ""
+inputs:
+  github-token:
+    description: "GitHub Token to use for authentication (pushing to the repo)"
+    required: true
+runs:
+  using: node20
+  main: dist/index.mjs
