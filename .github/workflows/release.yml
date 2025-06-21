@@ -65,4 +65,10 @@ jobs:
       - name: Release
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: pnpm run release
+        run: |
+          VERSION=$(node -p "require('./package.json').version")
+          if [[ "$VERSION" == 0.* ]]; then
+            pnpm run release:first
+          else
+            pnpm run release
+          fi

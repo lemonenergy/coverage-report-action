@@ -1,6 +1,6 @@
 {
   "name": "typescript-action-template",
-  "version": "0.0.2",
+  "version": "0.0.0",
   "description": "",
   "type": "module",
   "exports": {
@@ -21,6 +21,7 @@
     "lint": "eslint --cache --fix .",
     "all": "pnpm run lint && pnpm run format && pnpm run types",
     "release": "changelogen --release HEAD && git push --follow-tags",
+    "release:first": "changelogen -r 1.0.0 --release HEAD && git push --follow-tags",
     "dist": "pnpm run build || true && git add . && git commit -m 'chore: update dist' && git push",
     "types": "tsc --skipLibCheck --noEmit"
   },
