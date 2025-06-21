@@ -1,12 +1,13 @@
-name: "Action Template Lemon"
-description: ""
-# outputs:
-#     value:
-#         description: ""
+name: "Lemon Frontend Coverage Report"
+description: "Computes the coverage report for the Lemon frontend and comments on the PR."
 inputs:
   github-token:
     description: "GitHub Token to use for authentication (pushing to the repo)"
     required: true
+  coverage-json-path:
+    description: "Path to the coverage JSON file"
+    required: false
+    default: "./coverage/coverage-summary.json"
 runs:
   using: node20
   main: dist/index.mjs
