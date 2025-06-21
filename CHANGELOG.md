@@ -1,5 +1,16 @@
 # Changelog
 
+## v0.0.2
+
+
+### 🏡 Chore
+
+- Format ([f6ef25b](https://github.com/lemonenergy/coverage-report-action/commit/f6ef25b))
+
+### ❤️ Contributors
+
+- Rafael-lua <rafael.tragueta@lemon.energy>
+
 ## v0.0.1
 
 ### 🚀 Enhancements
