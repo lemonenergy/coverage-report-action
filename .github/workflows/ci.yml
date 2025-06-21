@@ -6,7 +6,8 @@ on:
       - main
 
 permissions:
-  contents: write # This is required to create a release
+  contents: read
+  pull-requests: write
 
 concurrency:
   group: "test-and-dist"
