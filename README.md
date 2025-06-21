@@ -56,7 +56,7 @@ jobs:
    ```json
    {
      "scripts": {
-       "test:coverage": "vitest run --coverage --reporter=json-summary"
+       "test:coverage": "vitest run --coverage --coverage.provider=v8 --coverage.reporter=json-summary"
      }
    }
    ```
