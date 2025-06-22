@@ -41,7 +41,7 @@ const run = async () => {
 
     await updateCoverageComment(filePath, githubToken)
 
-    info('Coverage report generated and comment updated successfully.')
+    info('Coverage report completed!')
   } catch (error) {
     setFailed(
       error instanceof Error ? error.message : `Unknown error: ${error}`

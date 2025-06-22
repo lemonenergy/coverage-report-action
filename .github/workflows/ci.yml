@@ -2,11 +2,12 @@ name: Test and dist
 
 on:
   pull_request:
+    types: [opened, synchronize, reopened, unlocked]
     branches:
       - main
 
 permissions:
-  contents: read
+  contents: write
   pull-requests: write
 
 concurrency:
@@ -39,6 +40,7 @@ jobs:
         uses: actions/checkout@v4
         with:
           fetch-depth: 0
+          ref: ${{ github.event.pull_request.head.ref }}
 
       - name: 🚀 Setup
         uses: ./.github/actions/setup-node-pnpm
@@ -52,3 +54,8 @@ jobs:
       - name: Build the distribution
         continue-on-error: true
         run: pnpm run dist
+
+      - name: Push changes
+        # Ensures it only pushes if the PR is from the same repository
+        if: github.event.pull_request.head.repo.full_name == github.repository
+        run: git push origin HEAD:${{ github.event.pull_request.head.ref }}

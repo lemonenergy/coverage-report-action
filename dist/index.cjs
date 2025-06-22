@@ -31420,7 +31420,7 @@ const makeCoverageMarkdown = (coverage, paths) => {
   });
   coverageRender += "\n";
   if (filesCoverageLinesData.length > 10) {
-    coreExports.warning(
+    coreExports.info(
       "More than 10 files with coverage data found. Report will be done inside a toggle."
     );
     report += makeToggleMarkdown("Coverage by file", coverageRender);
@@ -31476,7 +31476,7 @@ const run = async () => {
       githubToken
     );
     await updateCoverageComment(filePath, githubToken);
-    coreExports.info("Coverage report generated and comment updated successfully.");
+    coreExports.info("Coverage report completed!");
   } catch (error) {
     coreExports.setFailed(
       error instanceof Error ? error.message : `Unknown error: ${error}`
