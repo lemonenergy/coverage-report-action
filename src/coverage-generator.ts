@@ -106,7 +106,7 @@ const makeCoverageMarkdown = (coverage: CoverageJson, paths?: string[]) => {
   coverageRender += '\n'
 
   if (filesCoverageLinesData.length > 10) {
-    core.warning(
+    core.info(
       'More than 10 files with coverage data found. Report will be done inside a toggle.'
     )
 

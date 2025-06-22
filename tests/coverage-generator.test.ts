@@ -9,6 +9,8 @@ vi.mock('../src/github.utils', () => ({
   getChangedFiles: vi.fn(() => Promise.resolve([]))
 }))
 
+vi.mock('@actions/core')
+
 describe('generateCoverageReport()', () => {
   it('should throw if the coverage json is not found in path', async () => {
     const fakePath = 'fakepath/coverage-summary.json'
