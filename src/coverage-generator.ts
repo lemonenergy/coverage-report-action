@@ -12,8 +12,11 @@ const footNote = `> [!NOTE]
 // It also increase range of included files when there is a snapshot.
 // Only works when tests/snapshots are on the same directory.
 const simplifyPath = (path: string) => {
+  // Mock for testing purposes.
+  const testPath = process.env.VITEST ? '/home/runner/work/' : null
+
   let transformedPath = path
-    .replace(/^\/home\/runner\/work\//, '') // CI path
+    .replace(testPath ?? process.cwd(), '') // CI path
     .replace(/^\.\//, '') // Relative path
 
   // Target file for coverage from snapshots paths.
