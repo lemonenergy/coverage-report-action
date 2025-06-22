@@ -118,3 +118,7 @@ The action expects a coverage summary JSON file with this structure:
   "eslint.useFlatConfig": true
 }
 ```
+
+## Acknowledgements
+
+- Based on the original script created by @rivaldo-maciel in [Lemonpie](https://github.com/lemonenergy/lemonpie/pull/1151)
