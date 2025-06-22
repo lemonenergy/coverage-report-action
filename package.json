@@ -23,7 +23,7 @@
     "all": "pnpm run lint && pnpm run format && pnpm run types",
     "release": "changelogen --release HEAD && git push --follow-tags",
     "release:first": "changelogen -r 1.0.0 --release HEAD && git push --follow-tags",
-    "dist": "pnpm run build || true && git add . && git commit -m 'chore: update dist' && git push",
+    "dist": "pnpm run build || true && git add . && git commit -m 'chore: update dist'",
     "types": "tsc --skipLibCheck --noEmit"
   },
   "keywords": [
