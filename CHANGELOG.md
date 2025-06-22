@@ -1,5 +1,31 @@
 # Changelog
 
+## v1.0.1
+
+[compare changes](https://github.com/lemonenergy/coverage-report-action/compare/v1.0.0...v1.0.1)
+
+### 🩹 Fixes
+
+- Use correct path resolve ([6cf80b3](https://github.com/lemonenergy/coverage-report-action/commit/6cf80b3))
+- Improve path cleaning ([d2c795d](https://github.com/lemonenergy/coverage-report-action/commit/d2c795d))
+
+### 📖 Documentation
+
+- Add acknowledgements section with credit to original script ([01a758c](https://github.com/lemonenergy/coverage-report-action/commit/01a758c))
+
+### 🏡 Chore
+
+- **release:** V1.0.0 ([2114d30](https://github.com/lemonenergy/coverage-report-action/commit/2114d30))
+
+### 🤖 CI
+
+- Renable ci ([5c6b589](https://github.com/lemonenergy/coverage-report-action/commit/5c6b589))
+
+### ❤️ Contributors
+
+- Rafael-lua <rafael.tragueta@lemon.energy>
+- GitHub Actions ([@Github-Action-Bot](https://github.com/Github-Action-Bot))
+
 ## v1.0.0
 
 
