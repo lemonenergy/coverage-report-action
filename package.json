@@ -17,6 +17,7 @@
   "scripts": {
     "build": "unbuild 2>/dev/null",
     "test": "vitest",
+    "test:ci": "vitest run --coverage --coverage.provider=v8 --coverage.reporter=json-summary",
     "format": "prettier --write --cache .",
     "lint": "eslint --cache --fix .",
     "all": "pnpm run lint && pnpm run format && pnpm run types",
@@ -38,6 +39,7 @@
     "@actions/github": "^6.0.1",
     "@eslint/js": "^9.29.0",
     "@types/node": "^24.0.3",
+    "@vitest/coverage-v8": "^3.2.4",
     "changelogen": "^0.6.1",
     "eslint": "^9.29.0",
     "eslint-plugin-sort": "^4.0.0",

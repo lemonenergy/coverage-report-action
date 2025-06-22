@@ -1,12 +1,13 @@
 name: Test and dist
 
 on:
-  push:
-    branches-ignore:
+  pull_request:
+    branches:
       - main
 
 permissions:
-  contents: write # This is required to create a release
+  contents: read
+  pull-requests: write
 
 concurrency:
   group: "test-and-dist"

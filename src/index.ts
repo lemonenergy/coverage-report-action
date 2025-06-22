@@ -1,6 +1,8 @@
 import { getInput, info, setFailed } from '@actions/core'
 import { exec } from '@actions/exec'
 import { context } from '@actions/github'
+import { generateCoverageReport } from './coverage-generator'
+import { updateCoverageComment } from './github.utils'
 
 const run = async () => {
   try {
@@ -28,9 +30,18 @@ const run = async () => {
       `https://x-access-token:${githubToken}@github.com/${context.repo.owner}/${context.repo.repo}.git`
     ])
 
-    info('Release git config completed...')
+    info('Git config completed...')
 
-    info('TODO: Implement the release logic here...')
+    const coverageJsonPath = getInput('coverage-json-path')
+
+    const { filePath } = await generateCoverageReport(
+      coverageJsonPath,
+      githubToken
+    )
+
+    await updateCoverageComment(filePath, githubToken)
+
+    info('Coverage report generated and comment updated successfully.')
   } catch (error) {
     setFailed(
       error instanceof Error ? error.message : `Unknown error: ${error}`
