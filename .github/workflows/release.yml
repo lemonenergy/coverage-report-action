@@ -9,11 +9,11 @@ permissions:
   contents: write # This is required to create a release
 
 concurrency:
-  group: "test-and-dist"
+  group: "release-ci"
   cancel-in-progress: true
 
 jobs:
-  test-and-lint:
+  test:
     runs-on: ubuntu-latest
     steps:
       - name: 📥 Checkout
@@ -43,9 +43,9 @@ jobs:
             exit 1
           fi
 
-  dist:
+  release:
     runs-on: ubuntu-latest
-    needs: test-and-lint
+    needs: test
     steps:
       - name: 📥 Checkout
         uses: actions/checkout@v4

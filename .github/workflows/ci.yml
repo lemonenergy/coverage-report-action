@@ -30,7 +30,13 @@ jobs:
         run: pnpm all
 
       - name: 🧪 Run tests
-        run: pnpm test
+        run: pnpm test:ci
+
+      - name: Generate Coverage Report
+        uses: ./
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          coverage-json-path: "coverage/coverage-summary.json"
 
   dist:
     runs-on: ubuntu-latest

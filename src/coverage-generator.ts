@@ -12,8 +12,11 @@ const footNote = `> [!NOTE]
 // It also increase range of included files when there is a snapshot.
 // Only works when tests/snapshots are on the same directory.
 const simplifyPath = (path: string) => {
+  // Mock for testing purposes.
+  const testPath = process.env.VITEST ? '/home/runner/work/' : null
+
   let transformedPath = path
-    .replace(/^\/home\/runner\/work\//, '') // CI path
+    .replace(testPath ?? process.cwd(), '') // CI path
     .replace(/^\.\//, '') // Relative path
 
   // Target file for coverage from snapshots paths.
@@ -31,7 +34,12 @@ const simplifyPath = (path: string) => {
 
 const getJsonCoverage = (path: string) => {
   try {
-    const coverage = JSON.parse(readFileSync(resolve(path), 'utf8'))
+    const workspacePath = process.env.GITHUB_WORKSPACE || process.cwd()
+    const resolvedPath = resolve(workspacePath, path)
+
+    core.info(`Looking for coverage file at: ${resolvedPath}`)
+
+    const coverage = JSON.parse(readFileSync(resolvedPath, 'utf8'))
 
     if (!coverage.total) {
       core.error('No total coverage data found.')
@@ -103,15 +111,14 @@ const makeCoverageMarkdown = (coverage: CoverageJson, paths?: string[]) => {
   filesCoverageLinesData.forEach((file) => {
     coverageRender += `| ${simplifyPath(file.path)} | ${file.lines.covered}/${file.lines.total} | ${formatCoverage(file.lines.pct)} |\n`
   })
-  coverageRender += '\n'
 
   if (filesCoverageLinesData.length > 10) {
     core.info(
       'More than 10 files with coverage data found. Report will be done inside a toggle.'
     )
-
     report += makeToggleMarkdown('Coverage by file', coverageRender)
   } else {
+    coverageRender += '\n'
     report += coverageRender
   }
 
