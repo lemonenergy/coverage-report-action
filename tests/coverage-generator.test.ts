@@ -96,7 +96,6 @@ describe('generateCoverageReport()', () => {
 | src/dummy6.ts | 1/1 | 100% 🔵 |
 
 
-
 </details>`)
     expect(report).toMatchSnapshot()
   })

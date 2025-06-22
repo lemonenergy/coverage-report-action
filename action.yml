@@ -7,7 +7,7 @@ inputs:
   coverage-json-path:
     description: "Path to the coverage JSON file"
     required: false
-    default: "./coverage/coverage-summary.json"
+    default: "coverage/coverage-summary.json"
 runs:
   using: node20
   main: dist/index.mjs

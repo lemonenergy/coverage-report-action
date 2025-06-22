@@ -31355,7 +31355,10 @@ const simplifyPath = (path) => {
 };
 const getJsonCoverage = (path) => {
   try {
-    const coverage = JSON.parse(require$$1.readFileSync(require$$1$5.resolve(path), "utf8"));
+    const workspacePath = process.env.GITHUB_WORKSPACE || process.cwd();
+    const resolvedPath = require$$1$5.resolve(workspacePath, path);
+    coreExports.info(`Looking for coverage file at: ${resolvedPath}`);
+    const coverage = JSON.parse(require$$1.readFileSync(resolvedPath, "utf8"));
     if (!coverage.total) {
       coreExports.error("No total coverage data found.");
       return null;
@@ -31418,13 +31421,13 @@ const makeCoverageMarkdown = (coverage, paths) => {
     coverageRender += `| ${simplifyPath(file.path)} | ${file.lines.covered}/${file.lines.total} | ${formatCoverage(file.lines.pct)} |
 `;
   });
-  coverageRender += "\n";
   if (filesCoverageLinesData.length > 10) {
     coreExports.info(
       "More than 10 files with coverage data found. Report will be done inside a toggle."
     );
     report += makeToggleMarkdown("Coverage by file", coverageRender);
   } else {
+    coverageRender += "\n";
     report += coverageRender;
   }
   report += footNote;
