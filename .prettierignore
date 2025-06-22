@@ -3,6 +3,8 @@ build
 coverage
 dist
 
+CHANGELOG.md
+
 temp
 LICENSE.md
 pnpm-lock.yaml
