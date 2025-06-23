@@ -34,7 +34,7 @@ jobs:
         run: npm run test:coverage
 
       - name: Generate Coverage Report
-        uses: lemonenergy/coverage-report-action@v1.1.0
+        uses: lemonenergy/coverage-report-action@main
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
           coverage-json-path: './coverage/coverage-summary.json'
