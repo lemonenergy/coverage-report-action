@@ -31416,7 +31416,7 @@ const makeCoverageMarkdown = (coverage, paths) => {
     return report;
   }
   let coverageRender = "";
-  coverageRender += "| File | Lines | Coverage |\n";
+  coverageRender += "| File | Lines | Coverage Status |\n";
   coverageRender += "| ----- | ----- | ----- |\n";
   filesCoverageLinesData.forEach((file) => {
     coverageRender += `| ${simplifyPath(file.path)} | ${file.lines.covered}/${file.lines.total} | ${formatCoverage(file.lines.pct)} |
