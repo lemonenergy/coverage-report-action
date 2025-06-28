@@ -81,7 +81,7 @@ describe('generateCoverageReport()', () => {
 
 <br />
 
-| File | Lines | Coverage |
+| File | Lines | Coverage Status |
 | ----- | ----- | ----- |
 | src/index.ts | 10/10 | 100% 🔵 |
 | src/green.ts | 88/100 | 88% 🟢 |

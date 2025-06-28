@@ -105,7 +105,7 @@ const makeCoverageMarkdown = (coverage: CoverageJson, paths?: string[]) => {
 
   let coverageRender: string = ''
 
-  coverageRender += '| File | Lines | Coverage |\n'
+  coverageRender += '| File | Lines | Coverage Status |\n'
   coverageRender += '| ----- | ----- | ----- |\n'
 
   filesCoverageLinesData.forEach((file) => {
