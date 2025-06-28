@@ -1,5 +1,25 @@
 # Changelog
 
+## v1.0.2
+
+[compare changes](https://github.com/lemonenergy/coverage-report-action/compare/v1.0.1...v1.0.2)
+
+### 🏡 Chore
+
+- **release:** V1.0.1 ([d469ead](https://github.com/lemonenergy/coverage-report-action/commit/d469ead))
+- Readme [skip ci] ([1f2ee5f](https://github.com/lemonenergy/coverage-report-action/commit/1f2ee5f))
+- Update table heading ([a28492c](https://github.com/lemonenergy/coverage-report-action/commit/a28492c))
+- Update dist ([ae1b0c4](https://github.com/lemonenergy/coverage-report-action/commit/ae1b0c4))
+
+### ✅ Tests
+
+- Update tests ([867fb68](https://github.com/lemonenergy/coverage-report-action/commit/867fb68))
+
+### ❤️ Contributors
+
+- GitHub Actions ([@Github-Action-Bot](https://github.com/Github-Action-Bot))
+- Rafael-lua <rafael.tragueta@lemon.energy>
+
 ## v1.0.1
 
 [compare changes](https://github.com/lemonenergy/coverage-report-action/compare/v1.0.0...v1.0.1)
